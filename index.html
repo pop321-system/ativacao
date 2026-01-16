@@ -7,10 +7,15 @@
     <style>
         body { background-color: #001233; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; overflow: hidden; }
         .logo { width: 130px; margin-bottom: 30px; opacity: 0.9; }
+        
+        /* Loader de busca */
         .loader { border: 3px solid rgba(255, 255, 255, 0.1); border-top: 3px solid #FFCD00; border-radius: 50%; width: 45px; height: 45px; animation: spin 1.2s linear infinite; margin-bottom: 20px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Ícone de Sucesso */
         .success-icon { display: none; color: #00FF7F; font-size: 45px; margin-bottom: 20px; animation: scaleUp 0.4s ease-out; }
         @keyframes scaleUp { from { transform: scale(0); } to { transform: scale(1); } }
+
         .status { font-size: 12px; letter-spacing: 2px; color: #FFCD00; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
         .msg { font-size: 13px; color: #8892b0; text-align: center; max-width: 300px; line-height: 1.5; }
         .highlight { color: #00FF7F; font-weight: bold; }
@@ -18,21 +23,27 @@
     </style>
 </head>
 <body>
-    <img src="4. LOGO ORIGINAL NEGATIVO (FUNDO TRANSP).png" alt="POP321" class="logo">
+    <img src="logo.png" alt="POP321" class="logo">
+    
     <div class="trace"></div>
+    
     <div id="loader" class="loader"></div>
     <div id="success" class="success-icon">✓</div>
+    
     <div id="status" class="status">Localizando registro...</div>
     <p id="message" class="msg">Consultando base de dados P2P...<br>Verificando vínculo de propriedade.</p>
 
     <script>
+        // O "Teatro Tecnológico" de 3 segundos
         setTimeout(() => {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('success').style.display = 'block';
+            
+            // Texto final reafirmando sua ação anterior
             document.getElementById('status').innerText = 'CREDENCIAL ATIVA';
             document.getElementById('status').style.color = '#00FF7F';
             document.getElementById('message').innerHTML = 'Este acesso foi <span class="highlight">VALIDADO ANTERIORMENTE</span> pelo administrador.<br><br>Sua conta de <strong>Membro Fundador</strong> já consta como ativa no sistema.';
-        }, 3000);
+        }, 3000); 
     </script>
 </body>
 </html>
