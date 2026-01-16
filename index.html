@@ -5,26 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POP321 | Status de Credencial</title>
     <style>
-        body { background-color: #001233; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; overflow: hidden; }
-        .logo { width: 130px; margin-bottom: 30px; opacity: 0.9; }
+        body { background-color: #001233; color: white; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; padding: 25px; box-sizing: border-box; overflow: hidden; }
         
-        /* Loader de busca */
-        .loader { border: 3px solid rgba(255, 255, 255, 0.1); border-top: 3px solid #FFCD00; border-radius: 50%; width: 45px; height: 45px; animation: spin 1.2s linear infinite; margin-bottom: 20px; }
+        /* --- AJUSTE FEITO AQUI --- */
+        /* Logo aumentada para 220px */
+        .logo { width: 220px; margin-bottom: 35px; opacity: 1; }
+        /* ------------------------- */
+
+        /* Loader maior */
+        .loader { border: 4px solid rgba(255, 255, 255, 0.1); border-top: 4px solid #FFCD00; border-radius: 50%; width: 60px; height: 60px; animation: spin 1.2s linear infinite; margin-bottom: 25px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
-        /* Ícone de Sucesso */
-        .success-icon { display: none; color: #00FF7F; font-size: 45px; margin-bottom: 20px; animation: scaleUp 0.4s ease-out; }
+        /* Ícone de Sucesso maior */
+        .success-icon { display: none; color: #00FF7F; font-size: 65px; margin-bottom: 25px; animation: scaleUp 0.4s ease-out; }
         @keyframes scaleUp { from { transform: scale(0); } to { transform: scale(1); } }
 
-        .status { font-size: 12px; letter-spacing: 2px; color: #FFCD00; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
-        .msg { font-size: 13px; color: #8892b0; text-align: center; max-width: 300px; line-height: 1.5; }
+        /* Título aumentado */
+        .status { font-size: 16px; letter-spacing: 3px; color: #FFCD00; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; text-align: center; }
+        
+        /* Texto principal aumentado */
+        .msg { font-size: 17px; color: #cbd5e0; text-align: center; max-width: 320px; line-height: 1.6; }
+        
         .highlight { color: #00FF7F; font-weight: bold; }
-        .trace { width: 40px; height: 2px; background: #FFCD00; margin-bottom: 25px; border-radius: 2px; }
+        .trace { width: 60px; height: 3px; background: #FFCD00; margin-bottom: 30px; border-radius: 2px; }
     </style>
 </head>
 <body>
     <img src="logo.png" alt="POP321" class="logo">
-    
     <div class="trace"></div>
     
     <div id="loader" class="loader"></div>
@@ -34,16 +41,13 @@
     <p id="message" class="msg">Consultando base de dados P2P...<br>Verificando vínculo de propriedade.</p>
 
     <script>
-        // O "Teatro Tecnológico" de 3 segundos
         setTimeout(() => {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('success').style.display = 'block';
-            
-            // Texto final reafirmando sua ação anterior
             document.getElementById('status').innerText = 'CREDENCIAL ATIVA';
             document.getElementById('status').style.color = '#00FF7F';
             document.getElementById('message').innerHTML = 'Este acesso foi <span class="highlight">VALIDADO ANTERIORMENTE</span> pelo administrador.<br><br>Sua conta de <strong>Membro Fundador</strong> já consta como ativa no sistema.';
-        }, 3000); 
+        }, 3000);
     </script>
 </body>
 </html>
