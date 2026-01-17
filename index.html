@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POP321 | Terminal de Ativação</title>
     <style>
-        /* Ajuste para centralizar visualmente mais para cima */
+        /* Configuração de tela cheia e fundo azul marinho */
         body { background-color: #001233; color: white; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; overflow: hidden; }
         
-        /* Container principal com um leve deslocamento para cima (-5vh) */
+        /* Container deslocado para cima para melhor centralização no mobile */
         .main-container { display: flex; flex-direction: column; align-items: center; margin-top: -8vh; width: 100%; }
 
+        /* Logo com 350px de impacto visual */
         .logo { width: 350px; max-width: 90%; margin-bottom: 15px; }
         
+        /* Círculo de carregamento (Loader) */
         .loader { border: 4px solid rgba(255, 255, 255, 0.1); border-top: 4px solid #FFCD00; border-radius: 50%; width: 50px; height: 50px; animation: spin 1.2s linear infinite; margin-bottom: 20px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
+        /* Ícone de Sucesso (Check Verde) */
         .success-icon { display: none; color: #00FF7F; font-size: 60px; margin-bottom: 15px; animation: scaleUp 0.4s ease-out; }
         @keyframes scaleUp { from { transform: scale(0); } to { transform: scale(1); } }
 
+        /* Estilo dos textos principais */
         .status { font-size: 15px; letter-spacing: 3px; color: #FFCD00; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
-        
         .msg { font-size: 17px; color: #cbd5e0; text-align: center; max-width: 340px; line-height: 1.6; margin-bottom: 20px; }
         
+        /* Identificação Digital (ID de segurança) */
         .digital-id { display: none; font-family: monospace; font-size: 11px; color: #4a5568; border: 1px solid #1a202c; padding: 8px; border-radius: 4px; background: rgba(0,0,0,0.2); text-transform: uppercase; }
 
         .highlight { color: #00FF7F; font-weight: bold; }
@@ -44,15 +48,17 @@
     </div>
 
     <script>
-        // Transição ajustada para 6 segundos (6000ms)
+        // Ciclo de 6 segundos para simular a validação rigorosa
         setTimeout(() => {
+            // Troca os ícones
             document.getElementById('loader').style.display = 'none';
             document.getElementById('success').style.display = 'block';
             document.getElementById('digitalId').style.display = 'block';
             
-            document.getElementById('status').innerText = 'CREDENCIAL ATIVA';
+            // Atualiza os textos para confirmar sua ação no cartão
+            document.getElementById('status').innerText = 'ACESSO CONFIRMADO';
             document.getElementById('status').style.color = '#00FF7F';
-            document.getElementById('message').innerHTML = 'Este acesso foi <span class="highlight">VALIDADO ANTERIORMENTE</span>.<br><br>Status de <strong>Membro Fundador</strong> confirmado no banco de dados.';
+            document.getElementById('message').innerHTML = 'Esta credencial possui <span class="highlight">VALIDAÇÃO JÁ REALIZADA PELO ADMINISTRADOR</span>.<br><br>Seu acesso ao material de introdução POP321 está liberado.';
         }, 6000); 
     </script>
 </body>
